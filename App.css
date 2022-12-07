@@ -1,0 +1,165 @@
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main--part{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 750px;
+  background: #0B2434;
+}
+
+.back--part{
+  position:absolute;
+  width: 900px;
+  height: 650px;
+
+  background: #F5F5F5;
+  border-radius: 10px;
+}
+
+h1{
+  position:absolute;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  margin-top: -350px;
+
+  color: #2B283A;
+}
+
+#main--p{
+  position: absolute;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+  margin-top: -250px;
+  width: 500px;
+
+  color: #4A4E74;
+}
+
+
+
+
+.dice--container{
+  position: absolute;
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  margin-top: 100px;
+  gap: 30px;
+}
+
+
+.die{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight:bold;
+}
+
+
+
+
+
+
+.roll--button{
+  position: absolute;
+  top: 600px;
+  width: 220px;
+  height: 75px;
+
+  background: #5035FF;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  cursor: pointer;
+  border:none;
+
+  font-size:30px;
+  color: white;
+
+
+}
+
+.roll--button:focus {
+  outline: none;
+}
+
+.roll--button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.counter{
+  position: absolute;
+  color:black;
+  font-size: 30px;
+  margin-top: 450px;
+  margin-left: -600px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+.time{
+    position: absolute;
+    color:black;
+    font-size: 30px;
+    margin-top: 550px;
+    margin-left: -600px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.04em;
+  
+}
+
+/* scores part */
+
+.scores--container{
+  display: flex;
+  margin-top: 1100px;
+  margin-left: 550px;
+}
+
+.scores--text{
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  font-size: 40px;
+  margin-left: -70px;
+}
+
+.scores--text2{
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  font-size: 40px;
+  margin-top: -300px;
+  margin-left: -70px;
+  font-weight:100;
+}
+
+
+
