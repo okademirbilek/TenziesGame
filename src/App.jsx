@@ -66,12 +66,10 @@ function App(){
 
   // const [currentScore, setCurrentScore] = React.useState(0)
   const bestScore=JSON.parse(localStorage.getItem("notes"))
-  console.log(bestScore)
+  
 
   function choseBestScore(){
-    console.log(timer)
     const bestScore=JSON.parse(localStorage.getItem("notes"))
-    console.log(bestScore)
     //if u dont have any best scores
     if (bestScore.length === 0) {
         setNotes(timer)
@@ -194,21 +192,30 @@ function App(){
     return(
       <div className="main--part">
         {tenzies ? <Confetti width={onlyWidth}  height={onlyHeight} /> : ""}
-        <div className="back--part"></div>
-        <h1>Tenzies</h1>
-        <p id="main--p">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-        <div className="dice--container">  
-          {diceElements}
-        </div>
-        <button 
-          className="roll--button" 
-          onClick={rollDice}>
-          {tenzies ? "New Game" : "Roll"}
-        </button>
+        <div className="back--part">
+          
+          <h1>Tenzies</h1>
+          <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+          <div className="dice--container">  
+            {diceElements}
+          </div>
 
-        <h2 className="counter">Roll Count: {count}</h2>
-        <h2 className="time">Time: {formatTime()}</h2>
-        <Scores notes={notes} />
+
+          <button 
+              className="roll--button" 
+              onClick={rollDice}>
+              {tenzies ? "New Game" : "Roll"}
+          </button>
+
+
+          <div className="scores">
+            <h2 className="counter">Roll Count: {count}</h2>
+            <h2 className="time">Time: {formatTime()}</h2>
+            <Scores notes={notes} />
+          </div>
+
+
+        </div>
       </div>
     )
   }

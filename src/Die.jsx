@@ -1,9 +1,5 @@
 import React from "react";
 
-
-
-
-
 function Die(props) {
 
     const styles = {

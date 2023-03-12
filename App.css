@@ -1,65 +1,56 @@
+*,*::before, *::after{
+  box-sizing: border-box;
+}
 
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body{ 
+  font-family: 'Inter';
+  font-style: normal;
+  margin: 0; 
+  padding: 0;
+  width: 100dvw;
+  height: 100dvh; 
 }
 
 .main--part{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1000px;
-  height: 750px;
   background: #0B2434;
 }
 
-.back--part{
-  position:absolute;
-  width: 900px;
-  height: 650px;
-
+.back--part{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
   background: #F5F5F5;
-  border-radius: 10px;
+  border-radius: 0.625em;
+  width: 90%;
+  margin:1em 0;
+  
 }
 
-h1{
-  position:absolute;
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 30px;
+.back--part > h1{
+  font-size: 3.125rem;
   letter-spacing: -0.03em;
-  margin-top: -350px;
-
   color: #2B283A;
+  margin: 0;
+  margin-top: .5em; 
 }
 
-#main--p{
-  position: absolute;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 22px;
-  letter-spacing: -0.04em;
-  margin-top: -250px;
-  width: 500px;
-
+.back--part > p{
+  max-width: 300px;
   color: #4A4E74;
+  letter-spacing: -0.03em;
 }
-
-
 
 
 .dice--container{
-  position: absolute;
   display: grid;
-  grid-template: auto auto / repeat(5, 1fr);
-  margin-top: 100px;
-  gap: 30px;
+  grid-template: repeat(5, 1fr) / auto auto  ;
+  gap: 1.5em 2.5em;
+  margin-top: .5em;
 }
 
 
@@ -67,37 +58,26 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight:bold;
 }
 
 
-
-
-
-
 .roll--button{
-  position: absolute;
-  top: 600px;
-  width: 220px;
-  height: 75px;
-
+  padding:.5em 2.5em ;
+  margin-top: .5em;
+  font-size:1.875rem;
   background: #5035FF;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.18);
-  border-radius: 10px;
+  border-radius:0.625em;
   cursor: pointer;
   border:none;
-
-  font-size:30px;
   color: white;
-
-
 }
 
 .roll--button:focus {
@@ -108,58 +88,90 @@ h1{
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
+/* roll count and time  */
+
 .counter{
-  position: absolute;
   color:black;
-  font-size: 30px;
-  margin-top: 450px;
-  margin-left: -600px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22px;
-  letter-spacing: -0.04em;
+  margin-top: .5em;
 }
 
 .time{
-    position: absolute;
-    color:black;
-    font-size: 30px;
-    margin-top: 550px;
-    margin-left: -600px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-    letter-spacing: -0.04em;
-  
+  color:black;
 }
 
 /* scores part */
 
 .scores--container{
   display: flex;
-  margin-top: 1100px;
-  margin-left: 550px;
+  align-items: center;
+  gap: .3em;
 }
-
-.scores--text{
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  font-size: 40px;
-  margin-left: -70px;
-}
-
+.scores--text,
 .scores--text2{
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  font-size: 40px;
-  margin-top: -300px;
-  margin-left: -70px;
-  font-weight:100;
+  margin: 0;
 }
 
 
+/* media queries */
+
+/******************* tablets ****************/
+
+@media (min-width:768px)  {
+  
+  .dice--container{
+    grid-template: repeat(4, 1fr) / auto auto auto  ;  
+    
+  }
+}
+
+/******************* wider-screens ****************/
+
+@media (min-width:1280px)  {
+ 
+  body{
+    font-size: 24px;
+  }
+  .main--part{
+    /* background: #f0060a; */
+    width: 100vw;
+    height: 100vh; 
+  }
+
+  .back--part{ 
+    width: 90%;
+    height: 80%; 
+  }
+
+  .back--part > h1{
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  .back--part > p{
+    max-width: 650px;
+  }
+
+  .dice--container{
+    grid-template: auto auto /repeat(5, 1fr)  ;
+  }
+
+
+  .roll--button{
+    padding:.5em 2.5em ;
+    margin-top: 1.5em;
+    
+  }
+  
+  .scores{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+  }
+
+  .counter,
+  .time{
+    margin:0;
+  }
+}
 
